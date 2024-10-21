@@ -99,11 +99,15 @@ def main():
     df_flashbay = pd.DataFrame(all_reviews)
 
 #Save csv in Github repo
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    data_dir = os.path.join(current_dir, 'data')
+    os.makedirs(data_dir, exist_ok=True)
     github_repo_path = os.path.dirname(os.path.abspath(__file__))
-    csv_filename = os.path.join(github_repo_path, 'data_flashbay.csv')
+    csv_filename = 'data_flashbay.csv'
+    full_path = os.path.join(data_dir, csv_filename)
 
 # Save the DataFrame to a CSV file
-    df_flashbay.to_csv(csv_filename, index=False)
+    df_flashbay.to_csv(full_path, index=False)
     print(f"Data saved to {csv_filename}")
 
 # Output evaluation
