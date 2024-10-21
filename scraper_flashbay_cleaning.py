@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import re
+import os
 
 # Preparing the dataset
 pd.set_option('display.max_columns', None)
@@ -93,5 +94,5 @@ print("\nSample of the last few rows:")
 print(df_flashbay_clean.tail())
 
 # Save the cleaned dataset
-df_flashbay_clean.to_csv('data_flashbay_clean.csv', index=False)
-print("\nCleaned dataset saved as 'data_flashbay_clean.csv'")
+df_flashbay_clean.to_csv('data/data_flashbay_clean.csv', index=False)
+print("\nCleaned Flashbay dataset saved as 'data/data_flashbay_clean.csv'")

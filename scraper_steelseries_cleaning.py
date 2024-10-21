@@ -93,5 +93,5 @@ print("\nSample of the last few rows:")
 print(df_steelseries_clean.tail())
 
 # Save the cleaned dataset
-df_steelseries_clean.to_csv('data_steelseries_clean.csv', index=False)
-print("\nCleaned dataset saved as 'data_steelseries_clean.csv'")
+df_steelseries_clean.to_csv('data/data_steelseries_clean.csv', index=False)
+print("Cleaned Steelseries dataset saved as 'data/data_steelseries_clean.csv'")
