@@ -5,3 +5,5 @@
 
 # scraper_steelseries.py exports data from the Trustpilot website for company SteelSeries and saves the data to a dataset called data_steelseries.csv
 # scraper_steelseries_cleaning.py inspects the data_steelseries.csv dataset and removes rows that did not have the correct data extracted. This is because the structure of the Trustpilot website changes for older posts. The cleaned dataset is then stored in data_steelseries_clean.csv
+
+# preprocessor_trustpilot.py reads datasets data_flashbay_clean.csv and data_steelseries_clean.csv and, upon verifying that the columns and shapes of the two datasets match, concatenates them into df_trustpilot. 
