@@ -6,7 +6,11 @@
 # scraper_steelseries.py exports data from the Trustpilot website for company SteelSeries and saves the data to a dataset called data_steelseries.csv
 # scraper_steelseries_cleaning.py inspects the data_steelseries.csv dataset and removes rows that did not have the correct data extracted. This is because the structure of the Trustpilot website changes for older posts. The cleaned dataset is then stored in data_steelseries_clean.csv
 
-# preprocessor_trustpilot.py reads datasets data_flashbay_clean.csv and data_steelseries_clean.csv and, upon verifying that the columns and shapes of the two datasets match, concatenates them into df_trustpilot. The corresponding columns are:
+# scraper_asda.py exports data from the Trustpilot website for company Asda and saves the data to a dataset called data_asda.csv
+# scraper_asda_cleaning.py inspects the data_asda.csv dataset and removes rows that did not have the correct data extracted. This is because the structure of the Trustpilot website changes for older posts. The cleaned dataset is then stored in data_asda_clean.csv
+
+
+# preprocessor_trustpilot.py reads datasets data_flashbay_clean.csv, data_steelseries_clean.csv and data_asda.csv and, upon verifying that the columns and shapes of the three datasets match, concatenates them into df_trustpilot. The corresponding columns are:
 # 'username': Name of the user who submitted the review
 # 'number_reviews': Number of reviews the user has submitted on the Trustpilot platform to date
 # 'location': the two-digit countrycode of the user
