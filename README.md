@@ -42,10 +42,10 @@
 # 'rating': rating as submitted by the user on a scale from 1 (very bad) to 5 (very good)
 # 'text': the text description the user submitted as part of their review
 # 'date_of_experience': the date on which the user experienced (most likely purchased) the product
-# 'verification': indicates whether the user is a verified user or not 
+# 'verification': indicates whether the user is a verified user (1) or not (0)
 # 'subject': subject line accompanying the text of the review
 # 'date_posted': includes the date of the post
 # 'hour_posted': includes the time of the post in military time
-# 'day_of_week_posted': includes the day of the week in letter format (e.g. 'Monday') of when the post was created
+# 'day_of_week_posted': includes the day of the week in digital format (e.g. 0 = Monday, 6 = Sunday) of when the post was created
 # 'days_between_experience_and_post': indicates the amount of time (in days) that has passed between the logged date_of_experience and the date_posted
-# 12 columns, 33,276 rows of data
+# 12 columns, 48,933 rows of data
