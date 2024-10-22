@@ -6,7 +6,7 @@ import os
 
 # Preparing the dataset
 pd.set_option('display.max_columns', None)
-df_flashbay = pd.read_csv('data_flashbay.csv', engine='python')
+df_flashbay = pd.read_csv('data/data_flashbay.csv', engine='python')
 
 def is_valid(value, expected_type):
     if pd.isna(value):
