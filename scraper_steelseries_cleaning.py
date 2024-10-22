@@ -5,7 +5,7 @@ import re
 
 # Preparing the dataset
 pd.set_option('display.max_columns', None)
-df_steelseries = pd.read_csv('data_steelseries.csv', engine='python')
+df_steelseries = pd.read_csv('data/data_steelseries.csv', engine='python')
 
 def is_valid(value, expected_type):
     if pd.isna(value):
