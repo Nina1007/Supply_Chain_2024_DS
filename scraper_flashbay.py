@@ -28,6 +28,7 @@ def scrape_page(url, page_number):
             verification_element = card.find('div', class_='styles_reviewLabel__IPaZd')
             date_posted_element = card.find('time')
             subject_ranking_element = card.find('h2', class_='typography_heading-s__f7029')
+            answer_element = card.find('p', attrs={'data-service-review-business-reply-text-typography': 'true'})
             
             username = username_element.text.strip() if username_element else ''
             number_review = number_review_element.text.strip() if number_review_element else ''
@@ -35,6 +36,7 @@ def scrape_page(url, page_number):
             text = text_element.text.strip() if text_element else ''
             verification = verification_element.text.strip() if verification_element else ''
             subject = subject_ranking_element.text.strip() if subject_ranking_element else ''
+            answer = answer_element.text.strip() if answer_element else ''
             
             date_of_experience = ''
             if date_of_experience_element:
@@ -63,7 +65,8 @@ def scrape_page(url, page_number):
                 'date_posted': date_posted,
                 'verification': verification,
                 'subject': subject,
-                'page_number': page_number
+                'page_number': page_number,
+                'answer': answer
             })
         except Exception as e:
             print(f"Error processing a review on page {page_number}: {e}")
