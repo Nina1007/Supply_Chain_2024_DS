@@ -104,7 +104,7 @@ print(f"Cleaned dataset size: {df_asda_clean.shape[0]}")
 print(f"Removed {df_asda.shape[0] - df_asda_clean.shape[0]} rows")
 
 # Save if the results look good
-if df_asda_clean.shape[0] > df_asda.shape[0] * 0.5:  # At least 50% of data retained
+if df_asda_clean.shape[0] > df_asda.shape[0] * 0.5:  
     df_asda_clean.to_csv('data/data_asda_clean.csv', index=False)
     print("\nCleaned dataset saved successfully")
 else:
