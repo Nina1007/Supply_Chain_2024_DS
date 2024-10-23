@@ -2,5 +2,6 @@ import scraper_flashbay
 import scraper_flashbay_cleaning
 import scraper_steelseries
 import scraper_steelseries_cleaning
-import preprocessor_trustpilot
+import preprocessor_1_trustpilot
+import preprocessor_2_trustpilot
 
