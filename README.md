@@ -23,5 +23,11 @@
 # 7.	Show distribution of target variable
 # 8.	Target variable .describe(), mean, mode, median
 # 9.	Show class balance/imbalance
+# produces data_trustpilot_first.csv
+
+# initial_feature_processing.ipynb - accomplishes the following:
+# 1.	Create additional useful columns from existing data
+# 2.	Transform categorical columns to numeric wherever appropriate
+# produces data_trustpilot.csv
 
 # exploratory_data_analysis_trustpilot.ipynb - accomplishes the following:
