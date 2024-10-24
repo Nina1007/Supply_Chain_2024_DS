@@ -2,6 +2,13 @@ import scraper_flashbay
 import scraper_flashbay_cleaning
 import scraper_steelseries
 import scraper_steelseries_cleaning
-import preprocessor_1_trustpilot
-import preprocessor_2_trustpilot
+import scraper_asda
+import scraper_asda_cleaning
+import scraper_quicken
+import scraper_quicken_cleaning
+
+import initial_data_cleaning_trustpilot.ipynb
+import exploratory_data_analysis_trustpilot.ipynb
+import feature_engineering_trustpilot.ipynb
+import basic_text_statistics_trustpilot.ipynb
 
