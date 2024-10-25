@@ -8,7 +8,8 @@ import scraper_quicken
 import scraper_quicken_cleaning
 
 import initial_data_cleaning_trustpilot.ipynb
-import exploratory_data_analysis_trustpilot.ipynb
-import feature_engineering_trustpilot.ipynb
+import initial_feature_processing.ipynb
 import basic_text_statistics_trustpilot.ipynb
+import exploratory_data_analysis_trustpilot.ipynb
+
 
