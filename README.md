@@ -31,3 +31,8 @@
 # produces data_trustpilot.csv
 
 # exploratory_data_analysis_trustpilot.ipynb - accomplishes the following:
+# 1.	Univariate analysis using .describe, mean, mode, median, histograms, box plots, check for outliers, value counts for categorical, Q-Q plot 
+# 2.	Bivariate analysis with target using boxplots of numeric features by rating, bar plots by categorical features by rating, scatterplots, other plots, mean ratings by category, groupbys for numeric variables
+# 3.	Time series plot 
+# 4.	Perform groupby analyses for location, company and username
+# produces data_trustpilot_2.csv
