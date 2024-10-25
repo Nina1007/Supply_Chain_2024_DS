@@ -59,5 +59,8 @@
 # 14.	Logistic regression analysis for variable relationships including rig ratio
 # 15.	Validate and compare methods
 # 16.	Dimension reduction if needed
-# 17.	Update train/test split for training and test data based on feature selection
+# 17.   Scaling/nornalization/standardization
+# 18.   Oversampling/undersampling
+# 19.   Cross-validation
+# 20.	Update train/test split for training and test data based on feature selection
 # produces data_trustpilot_4.csv, train__4.csv, test_4.csv
