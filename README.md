@@ -53,3 +53,11 @@
 # 8.	Mean Absolute Difference
 # 9.	Dispersion ratio
 # 10.	Kruskal-Wallis test
+# 11.	Recursive Feature Elimination
+# 12.	LASSO
+# 13.	Random Forest importance
+# 14.	Logistic regression analysis for variable relationships including rig ratio
+# 15.	Validate and compare methods
+# 16.	Dimension reduction if needed
+# 17.	Update train/test split for training and test data based on feature selection
+# produces data/data_trustpilot_4.csv, data/train_conservative_4.csv, data/test_conservative_4.csv, data/train_strict_4.csv, data/test_strict_4.csv
