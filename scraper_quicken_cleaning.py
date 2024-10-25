@@ -4,7 +4,6 @@ from datetime import datetime
 import re
 import os
 
-# Preparing the dataset
 pd.set_option('display.max_columns', None)
 df_quicken = pd.read_csv('data/data_quicken.csv', engine='python')
 
@@ -30,10 +29,10 @@ def is_valid(value, expected_type):
         except ValueError:
             return False
     elif expected_type == 'location':
-        return isinstance(value, str) and len(value) <= 3  # Assuming location is a country code
+        return isinstance(value, str) and len(value) <= 3  
     elif expected_type == 'number_reviews':
         return isinstance(value, str) and 'review' in value.lower()
-    return True  # For other columns, consider all values valid
+    return True  
 
 def check_row(row):
     issues = []
@@ -49,50 +48,41 @@ def check_row(row):
         issues.append('number_reviews')
     return issues
 
-# Apply the check to each row
 df_quicken['issues'] = df_quicken.apply(check_row, axis=1)
 
-# Display distribution of issues before cleaning
 print("Distribution of issues before cleaning:")
 issue_counts = df_quicken['issues'].explode().value_counts()
 print(issue_counts)
 
-# Count the number of problematic rows
 problematic_rows_count = df_quicken[df_quicken['issues'].apply(len) > 0].shape[0]
-print(f"\nNumber of problematic rows: {problematic_rows_count}")
+print(f"Number of problematic rows: {problematic_rows_count}")
 
-# Remove problematic rows
 df_quicken_clean = df_quicken[df_quicken['issues'].apply(len) == 0].copy()
 
-# Drop the 'issues' column as it's no longer needed
 df_quicken_clean = df_quicken_clean.drop('issues', axis=1)
 
-print(f"\nRemoved {df_quicken.shape[0] - df_quicken_clean.shape[0]} rows")
+print(f"Removed {df_quicken.shape[0] - df_quicken_clean.shape[0]} rows")
 print(f"Cleaned dataset now has {df_quicken_clean.shape[0]} rows")
 
-# Function to display unique values and their counts for a column
 def display_unique_values(df, column_name):
     unique_values = df[column_name].value_counts(dropna=False)
-    print(f"\nUnique values in {column_name}:")
+    print(f"Unique values in {column_name}:")
     print(unique_values.head(10)) 
     if len(unique_values) > 10:
         print(f"... (and {len(unique_values) - 10} more)")
 
-# Check unique values in the cleaned dataset
 columns_to_check = ['rating', 'location', 'number_reviews', 'verification']
 for column in columns_to_check:
     display_unique_values(df_quicken_clean, column)
 
-# Additional checks
-print("\nDataset Information:")
+print("Dataset Information:")
 print(df_quicken_clean.info())
 
-print("\nSample of the first few rows:")
+print("Sample of the first few rows:")
 print(df_quicken_clean.head())
 
-print("\nSample of the last few rows:")
+print("Sample of the last few rows:")
 print(df_quicken_clean.tail())
 
-# Save the cleaned dataset
 df_quicken_clean.to_csv('data/data_quicken_clean.csv', index=False)
-print("\nCleaned quicken dataset saved as 'data/data_quicken_clean.csv'")
+print("Cleaned quicken dataset saved as 'data/data_quicken_clean.csv'")

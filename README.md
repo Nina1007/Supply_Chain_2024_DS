@@ -31,15 +31,25 @@
 # produces data_trustpilot.csv
 
 # exploratory_data_analysis_trustpilot.ipynb - accomplishes the following:
-# 1.	Univariate analysis using .describe, mean, mode, median, histograms, box plots, check for outliers, value counts for categorical, Q-Q plot 
-# 2.	Bivariate analysis with target using boxplots of numeric features by rating, bar plots by categorical features by rating, scatterplots, other plots, mean ratings by category, groupbys for numeric variables
+# 1.	Univariate analysis using .describe, mean, mode, median, data visualizations, Q-Q plot 
+# 2.	Multivariate analysis with target data visualizations, mean ratings by category, groupbys for numeric variables
 # 3.	Time series plot 
 # 4.	Perform groupby analyses for location, company and username
 # produces data_trustpilot_2.csv
 
 # advanced_feature_processing.ipynb - accomplishes the following:
 # 1.	Train/test split with stratification for ratings
-# 2.	Handle outliers (now that we can visualize their impact) on training data only
+# 2.	Handle outliers on training data only
 # produces data_trustpilot_3.csv, train_trustpilot_3, and test_trustpilot_3
 
 # feature_selection.ipynb - accomplishes the following:
+# 1.	Heat map of numeric variables correlations
+# 2.	Checking for multicollinearity
+# 3.	Pearson and Spearman 
+# 4.	Mutual Information
+# 5.	ANOVA test
+# 6.	Variance threshold
+# 7.	Fisher score
+# 8.	Mean Absolute Difference
+# 9.	Dispersion ratio
+# 10.	Kruskal-Wallis test
