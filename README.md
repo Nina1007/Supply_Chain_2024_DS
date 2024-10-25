@@ -36,3 +36,10 @@
 # 3.	Time series plot 
 # 4.	Perform groupby analyses for location, company and username
 # produces data_trustpilot_2.csv
+
+# advanced_feature_processing.ipynb - accomplishes the following:
+# 1.	Train/test split with stratification for ratings
+# 2.	Handle outliers (now that we can visualize their impact) on training data only
+# produces data_trustpilot_3.csv
+
+# feature_selection.ipynb - accomplishes the following:
