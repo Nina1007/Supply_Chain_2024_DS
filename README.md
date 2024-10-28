@@ -29,7 +29,7 @@
 # 1.	Create additional useful columns from existing data
 # 2.	Transform categorical columns to numeric wherever appropriate
 # produces data_trustpilot.csv
-# 3.    Basic text preprocessing such as initial cleaning, removing of stop words, punctuations, and special characters, calculate text length, tokenize and count word frequencies, most common words.
+# 3.    Basic text preprocessing such as initial cleaning, removing of stop words, punctuations, and special characters, calculate text length, tokenize and count word frequencies, most common words, and filters out non-EN text rows
 
 # exploratory_data_analysis_trustpilot.ipynb - accomplishes the following:
 # 1.	Univariate analysis using .describe, mean, mode, median, data visualizations, Q-Q plot 
