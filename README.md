@@ -49,7 +49,9 @@
 # advanced_feature_processing.ipynb - accomplishes the following:
 # 1.	Train/test split with stratification for ratings
 # 2.	Handle outliers on training data only
-# produces data_trustpilot_3.csv, train_trustpilot_3, and test_trustpilot_3
+# 3.    TF-IDF with n-grams
+# 4.    Bag-of-words
+# produces data_trustpilot_3.csv, train_trustpilot_3.csv, test_trustpilot_3.csv, X_train_tfidf.npy, X_test_tfidf.npy, tfidf_features.npy, X_train_bow.npy', X_test_bow.npy, bow_features.npy
 
 # feature_selection.ipynb - accomplishes the following:
 # 1.	Heat map of numeric variables correlations
