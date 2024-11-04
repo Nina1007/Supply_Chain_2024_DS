@@ -72,6 +72,6 @@
 # 16.	Scaling/nornalization/standardization
 # 17.   Dimensionality reduction if needed
 # 18.   Oversampling/undersampling
-# 19.   Cross-validation  
+# 19.   Cross-validation    
 # 20.	Update train/test split for training and test data based on feature selection
-# produces data_trustpilot_4.csv, train__4.csv, test_4.csv  
+# produces data_trustpilot_4.csv, train_final.csv, test_final.csv, final_features.txt   
