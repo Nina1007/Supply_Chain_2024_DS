@@ -1,31 +1,19 @@
 # Supply_Chain_2024_DS
 
-# scraper_flashbay.py exports data from the Trustpilot website for company Flashbay and saves the data to a dataset called data_flashbay.csv
-# scraper_flashbay_cleaning.py inspects the data_flashbay.csv dataset and removes rows that did not have the correct data extracted. This is because the structure of the Trustpilot website changes for older posts. The cleaned dataset is then stored in data_flashbay_clean.csv
+# 1.scraper_trustpilot.py exports data from the Trustpilot website for for numerous companies, adds the company name as a column and removes rows that did not have the correct data extracted due to structural changes to the website over time. Saves the data to a dataset called data_trustpilot_clean.csv
 
-# scraper_steelseries.py exports data from the Trustpilot website for company SteelSeries and saves the data to a dataset called data_steelseries.csv
-# scraper_steelseries_cleaning.py inspects the data_steelseries.csv dataset and removes rows that did not have the correct data extracted. This is because the structure of the Trustpilot website changes for older posts. The cleaned dataset is then stored in data_steelseries_clean.csv
-
-# scraper_asda.py exports data from the Trustpilot website for company Asda and saves the data to a dataset called data_asda.csv
-# scraper_asda_cleaning.py inspects the data_asda.csv dataset and removes rows that did not have the correct data extracted. This is because the structure of the Trustpilot website changes for older posts. The cleaned dataset is then stored in data_asda_clean.csv
-
-# scraper_quicken.py exports data from the Trustpilot website for company Quicken and saves the data to a dataset called data_quicken.csv
-# scraper_quicken_cleaning.py inspects the data_quicken.csv dataset and removes rows that did not have the correct data extracted. This is because the structure of the Trustpilot website changes for older posts. The cleaned dataset is then stored in data_quicken_clean.csv
-
-
-# initial_data_cleaning_trustpilot.ipynb - accomplishes the following:
-# 1.	Merge datasets
-# 2.	Remove obviously non-critical columns
-# 3.	Convert dtypes appropriately
-# 4.	Remove duplicates
-# 5.	Handle N/A values
-# 6.	Fix content standardization (e.g., 'customer' vs 'Customer')
-# 7.	Show distribution of target variable
-# 8.	Target variable .describe(), mean, mode, median
-# 9.	Show class balance/imbalance
+# 2.initial_data_cleaning_trustpilot.ipynb - accomplishes the following:
+# 1.	Remove obviously non-critical columns
+# 2.	Convert dtypes appropriately
+# 3.	Remove duplicates
+# 4.	Handle N/A values
+# 5.	Fix content standardization (e.g., 'customer' vs 'Customer')
+# 6.	Show distribution of target variable
+# 7.	Target variable .describe(), mean, mode, median
+# 8.	Show class balance/imbalance
 # produces data_trustpilot_first.csv
 
-# initial_feature_processing.ipynb - accomplishes the following:
+# 3.initial_feature_processing.ipynb - accomplishes the following:
 # 1.    Filtering out non-EN text rows
 # 2.	Create additional useful columns from existing data
 # 3.    Basic text preprocessing such as:
@@ -38,7 +26,7 @@
 #       - identifying words and phrases that might indicate positive or negative reviews
 # produces data_trustpilot.csv
 
-# exploratory_data_analysis_trustpilot.ipynb - accomplishes the following:
+# 4.exploratory_data_analysis_trustpilot.ipynb - accomplishes the following:
 # 1.	Univariate analysis using .describe, mean, mode, median, data visualizations, Q-Q plot, word-frequency plots
 # 2.	Multivariate analysis with target data visualizations, mean ratings by category, groupbys for numeric variables, word length distribution by rating
 # 3.    Wordclouds
@@ -55,23 +43,19 @@
 
 # feature_selection.ipynb - accomplishes the following:
 # 1.	Heat map of numeric variables correlations
-# 2.	Checking for multicollinearity
-# 3.	Pearson and Spearman 
-# 4.	Mutual Information
-# 5.	ANOVA test
-# 6.	Variance threshold
-# 7.	Fisher score
-# 8.	Mean Absolute Difference
-# 9.	Dispersion ratio
-# 10.	Kruskal-Wallis test
-# 11.	Recursive Feature Elimination
-# 12.	LASSO
-# 13.	Random Forest importance
-# 14.	Logistic regression analysis for variable relationships including rig ratio
-# 15.	Validate and compare methods
-# 16.	Scaling/nornalization/standardization
-# 17.   Dimensionality reduction if needed
-# 18.   Oversampling/undersampling
-# 19.   Cross-validation    
-# 20.	Update train/test split for training and test data based on feature selection
-# produces data_trustpilot_4.csv, train_final.csv, test_final.csv, final_features.txt   
+# 2.	Encoding
+# 3.	Scaling/nornalization/standardization
+# 4.	Variance threshold
+# 5.    Mean Absolute Difference
+# 6.	Pearson and Spearman 
+# 7.	ANOVA test
+# 8.	Mutual Information
+# 9.	Kruskal-Wallis test
+# 10.	Recursive Feature Elimination
+# 11.	LASSO
+# 12.	Random Forest importance
+# 13.	Logistic regression analysis for variable relationships including rig ratio
+# 14.	Checking for multicollinearity
+# 15.	Feature selection with cross-validation
+# 16.	Update train/test split for training and test data based on feature selection
+# produces X_train.csv, X_test.csv, y_train.csv, y_test.csv  
