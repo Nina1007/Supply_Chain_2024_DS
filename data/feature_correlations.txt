@@ -1,0 +1,12 @@
+Selected Features with Correlations:
+Sentiment_VADER: 0.557 (numeric)
+Sentiment_VADER_cat: 0.553 (numeric)
+Sentiment_Blob: 0.551 (numeric)
+Sentiment_Blob_cat: 0.525 (numeric)
+text_word_length: -0.392 (numeric)
+text_length: -0.379 (numeric)
+bow_2738: -0.224 (text)
+bow_1892: 0.220 (text)
+bow_1892: 0.215 (text)
+bow_1277: 0.204 (text)
+bow_318: -0.204 (text)

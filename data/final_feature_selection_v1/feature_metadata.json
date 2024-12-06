@@ -1,0 +1,18 @@
+{
+    "selected_features": [
+        "Sentiment_Blob",
+        "Sentiment_VADER",
+        "time_sentiment",
+        "rating_deviation"
+    ],
+    "n_features": 4,
+    "feature_types": {
+        "numeric": [
+            "Sentiment_Blob",
+            "Sentiment_VADER",
+            "time_sentiment",
+            "rating_deviation"
+        ],
+        "categorical": []
+    }
+}

@@ -1,0 +1,111 @@
+{
+  "features": [
+    "sentiment_divergence",
+    "sentiment_intensity",
+    "sentiment_length_ratio",
+    "verification_encoded",
+    "verified_sentiment",
+    "time_sentiment",
+    "extreme_sentiment",
+    "cluster",
+    "min_distance",
+    "distance_ratio",
+    "second_closest",
+    "cluster_confidence",
+    "cluster_rating_mean",
+    "rating_deviation"
+  ],
+  "topic_modeling_results": {
+    "optimal_k": 9,
+    "metrics": {
+      "silhouette_score": 0.5090877781175039,
+      "calinski_harabasz_score": 118615.32865810097,
+      "cluster_sizes": {
+        "6": 40280,
+        "0": 38850,
+        "3": 36522,
+        "2": 34742,
+        "5": 25349,
+        "1": 21620,
+        "8": 21217,
+        "4": 19044,
+        "7": 18415
+      }
+    }
+  },
+  "strategy_comparison": {
+    "tfidf_sentiment": {
+      "optimal_k": 2,
+      "metrics": {
+        "silhouette_score": 0.47695535163206576,
+        "calinski_harabasz_score": 5278.535466015738,
+        "cluster_sizes": {
+          "0": 256038,
+          "1": 1
+        }
+      }
+    },
+    "topic_modeling": {
+      "optimal_k": 9,
+      "metrics": {
+        "silhouette_score": 0.5090877781175039,
+        "calinski_harabasz_score": 118615.32865810097,
+        "cluster_sizes": {
+          "6": 40280,
+          "0": 38850,
+          "3": 36522,
+          "2": 34742,
+          "5": 25349,
+          "1": 21620,
+          "8": 21217,
+          "4": 19044,
+          "7": 18415
+        }
+      }
+    },
+    "hybrid": {
+      "optimal_k": 10,
+      "metrics": {
+        "silhouette_score": 0.30787227005967305,
+        "calinski_harabasz_score": 42066.953858891386,
+        "cluster_sizes": {
+          "8": 36622,
+          "5": 34622,
+          "9": 30019,
+          "3": 27159,
+          "6": 27132,
+          "7": 26586,
+          "2": 24576,
+          "4": 22977,
+          "0": 21454,
+          "1": 4892
+        }
+      }
+    },
+    "metadata_mix": {
+      "optimal_k": 5,
+      "metrics": {
+        "silhouette_score": 0.4380265168451565,
+        "calinski_harabasz_score": 118954.04982212333,
+        "cluster_sizes": {
+          "3": 92956,
+          "0": 47944,
+          "1": 42112,
+          "4": 39456,
+          "2": 33571
+        }
+      }
+    }
+  },
+  "shapes": {
+    "train": [
+      256039,
+      42
+    ],
+    "test": [
+      64010,
+      42
+    ]
+  },
+  "timestamp": "2024-12-06T13:45:03.798341"
+}
