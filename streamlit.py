@@ -11,10 +11,11 @@ import io
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier, BaggingClassifier
 from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score, f1_score, confusion_matrix
+from sklearn.metrics import accuracy_score, f1_score, confusion_matrix, classification_report
 from imblearn.over_sampling import SMOTE
 from imblearn.under_sampling import RandomUnderSampler
 import country_converter as coco
+import pickle
 
 # Performance optimization settings
 st.set_page_config(page_title="Supply Chain Project Dec 2024", layout="wide")
@@ -312,9 +313,10 @@ elif page == "Models":
         X_train, X_test, y_train, y_test = load_model_data()
         
         if X_train is not None:
-            tab1, tab2, tab3 = st.tabs(["Gradient Boosting with SMOTE", 
-                                       "Random Forest Bagging with RUS",
-                                       "SVC with RUS"])
+            tab1, tab2, tab3, tab4 = st.tabs(["Gradient Boosting with SMOTE", 
+                                              "Random Forest Bagging with RUS",
+                                              "SVC with RUS",
+                                              "Deep Learning models"])
             
             with tab1:
                 st.subheader("Gradient Boosting with SMOTE Sampling")
@@ -446,6 +448,103 @@ elif page == "Models":
                             'F1 Score': f1_per_class
                         })
                         st.table(f1_df)
-                        
+
+            with tab4:
+                st.subheader("Deep Learning models")
+
+                # Results dictionary data
+                data = {
+                    'Method': ['BoW encoding', 'Tfidf encoding', 'GloVe encoding', 'Word2Vec encoding', 'LSTM with GloVe encoding', 'LSTM with GloVe encoding', 'DestilBERT', 'DestilBERT', 'BERT', 'nlptown unchanged', 'nlptown finetuned'],
+                    'Dataset': ['unbalanced', 'unbalanced', 'unbalanced', 'unbalanced', 'unbalanced', 'undersampled', 'undersampled', 'undersampled', 'undersampled', 'undersampled', 'undersampled'],
+                    'review text': ['processed', 'processed', 'processed', 'processed', 'processed', 'processed', 'processed', 'unprocessed', 'unprocessed', 'unprocessed', 'unprocessed'],
+                    'Accuracy': ['nan', 0.49, 0.55, 0.57, 0.76, 0.55, 0.59, 0.62, 0.62, 0.54, 0.62],
+                    'minimal f1 score': ['nan', 'nan', 'nan', 'nan', 0.05, 0.42, 0.44, 0.48, 0.49, 0.40, 0.49]
+                }
+
+                df_results = pd.DataFrame(data)
+                st.subheader("Result summary of Deep learning models")
+                st.dataframe(df_results.head(11))
+
+                choice = ['RNN with GloVe on processed text', 'DestilBERT on unprocessed text']
+                option = st.selectbox('Choice of the model', choice)
+                st.write('The chosen model is :', option)
+ 
+                # Load the RNN results from the pickle file
+                with open('predictions_and_labels_RNN.pkl', 'rb') as f:
+                  data = pickle.load(f)
+
+                # Access results
+                test_pred_class = data['test_pred_class']
+                y_test_class = data['y_test_class']
+
+
+                # Load the DeatilBERT results from the pickle file
+                with open('predictions_and_labels_DB.pkl', 'rb') as f:
+                  data = pickle.load(f)
+
+                # Access predictions and true_labels
+                predictions = data['predictions']
+                true_labels = data['true_labels']
+  
+
+                if option == 'RNN with GloVe on processed text':     
+
+                    display = st.radio('What do you want to show ?', ('Classification report', 'Confusion matrix'))
+                    if display == 'Classification report':
+         
+                        st.subheader("Classification Report")
+                        report = classification_report(y_test_class, test_pred_class, output_dict=True)
+                        report_df = pd.DataFrame(report).transpose()
+                        st.dataframe(report_df.round(2))
+
+                    if display == 'Confusion matrix':
+                        st.subheader("Confusion Matrix")
+                        cm = confusion_matrix(y_test_class, test_pred_class)
+                        fig = plt.figure(figsize = (4,1.5))
+                        ax = fig.add_subplot()
+    
+                        sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
+                        ax.set_xlabel('Predicted')
+                        ax.set_ylabel('True')
+                        ax.set_title('Confusion Matrix')
+
+                        st.pyplot(fig)
+ 
+   
+
+                if option == 'DestilBERT on unprocessed text':
+      
+                    display = st.radio('What do you want to show ?', ('Classification report', 'Confusion matrix', 'Interpretability'))
+
+                    if display == 'Classification report':
+         
+                        st.subheader("Classification Report")
+                        report = classification_report(true_labels, predictions, output_dict=True)
+                        report_df = pd.DataFrame(report).transpose()
+                        st.dataframe(report_df.round(2))
+
+                    if display == 'Confusion matrix':
+            
+                        st.subheader("Confusion Matrix")
+            
+                        fig = plt.figure(figsize = (4,1.5))
+                        ax = fig.add_subplot()
+                        cm = confusion_matrix(true_labels, predictions)
+                        sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
+                        ax.set_xlabel('Predicted')
+                        ax.set_ylabel('True')
+                        ax.set_title('Confusion Matrix')
+
+                        st.pyplot(fig)
+
+                    if display == 'Interpretability':
+          
+                       st.subheader("Interpretability with lime")
+                       st.image("Accurate_and_easy.png", caption="4 start rating review", use_container_width=True)
+                       st.image("Good_and_bad.png", caption="4 start rating review", use_container_width=True)
+
+
     except Exception as e:
         st.error(f"Error loading or processing the data: {str(e)}")
+
+   
